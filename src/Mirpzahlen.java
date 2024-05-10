@@ -53,6 +53,10 @@ public class Mirpzahlen {
             mirpZahl = false;
         }
 
+        if(umdrehen(Zahl) == Zahl){
+            mirpZahl = false;
+        }
+
 
 
         return mirpZahl;
