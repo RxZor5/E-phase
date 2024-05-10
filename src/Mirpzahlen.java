@@ -42,12 +42,18 @@ public class Mirpzahlen {
 
     public static boolean istMirpZahl(int Zahl){
         boolean mirpZahl;
-
-        if(istPrim(Zahl)){
-            mirpZahl = umdrehen(Zahl) != Zahl;
-        }else{
+        if (istPrim(Zahl)) {
+            int umgedreht = umdrehen(Zahl);
+            if (istPrim(umgedreht)) {
+                mirpZahl = true;
+            } else {
+                mirpZahl = false;
+            }
+        } else {
             mirpZahl = false;
         }
+
+
 
         return mirpZahl;
     }
