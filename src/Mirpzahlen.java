@@ -1,10 +1,15 @@
 public class Mirpzahlen {
 
     public static void main(String[] args){
-        for (int i = 1; i <=100; i++) {
+        for (int i = 1; i <=999; i++) {
 
-            boolean test = istPrim(i);
-            System.out.println(test);
+            boolean test = istMirpZahl(i);
+            System.out.print(test + " = ");
+            System.out.print(i);
+            System.out.println();
+
+
+
         }
     }
 
@@ -12,6 +17,7 @@ public class Mirpzahlen {
 
         boolean primZahl=true;  //... solange wir keinen Teiler gefunden haben
         int moeglicherTeiler = 2;
+
         while(moeglicherTeiler  < Zahl){ //Teiler muss kleiner sein als Zahl selbst
             if(Zahl % moeglicherTeiler==0) { //Teiler gefunden -> keine Primzahl
                 primZahl=false;
@@ -23,18 +29,24 @@ public class Mirpzahlen {
     }
 
     public static int umdrehen (int Zahl){
-        int result = 0;
-        for (int j = Zahl; j > 0; j /= 10) {
-            result = result * 10 + j % 10;
-        }
-        return result;
+
+        int reverse = 0;
+        do{
+            reverse= reverse*10+(Zahl%10); //erst einer, dann zehner, dann hunderter
+            Zahl /= 10;
+        } while  (Zahl > 0);
+
+        return reverse;
+
     }
 
     public static boolean istMirpZahl(int Zahl){
-        boolean mirpZahl = true;
+        boolean mirpZahl;
 
-        if(){
-
+        if(istPrim(Zahl)){
+            mirpZahl = umdrehen(Zahl) != Zahl;
+        }else{
+            mirpZahl = false;
         }
 
         return mirpZahl;
