@@ -10,16 +10,22 @@ public class Rechtecke {
         System.out.println("Länge des Rechtecks: ");
         int laenge = sc.nextInt();
 
+        zeichneRechteck(laenge, hoehe);
     }
 
-    public static int zeichneRechteck(int laenge, int hoehe){
-        for (int i = 1; i <= hoehe; i++) {
-            for (int j = 1; j <= i; j++) {
+    public static void zeichneRechteck(int laenge, int hoehe){
+
+        for (int i = 0; i <= hoehe; i++) {
+            System.out.print(" * ");
+
+            for (int j = 0; j <= laenge; j++) {
                 System.out.print(" * ");
             }
+
             System.out.println();
         }
 
-
     }
+
 }
+
