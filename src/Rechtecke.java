@@ -29,11 +29,7 @@ public class Rechtecke {
             System.out.println();
         }
 
-
-
     }
-
-
 
 }
 
