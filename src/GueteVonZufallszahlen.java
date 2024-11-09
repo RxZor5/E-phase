@@ -13,8 +13,8 @@ public class GueteVonZufallszahlen {
         System.out.println("Anzahl der Blöcke: ");
         double anzahl = sc.nextInt();
 
-        double altezufallsZahl = Math.floor(Math.random()*1000);
-        double result = hp(altezufallsZahl, anzahl) / 100;
+        double altezufallsZahl = Math.random();
+        double result = hp(altezufallsZahl, anzahl);
         System.out.println(result);
 
 
@@ -22,31 +22,24 @@ public class GueteVonZufallszahlen {
     }
 
     public static double hp(double altezufallsZahl, double anzahl){
-            int checkedBlocks = 0;
+    /*        int checkedBlocks = 0;
             double result = 0;
             while(checkedBlocks < anzahl){
-
+*/
                 if (altezufallsZahl == 0) {
                     return Math.random();
                 }
 
                     double z = altezufallsZahl;
-                    double d = z % 10; //Einer
-                    double c = (z % 100 - d) / 10; //Zehner
-                    double b = (z % 1000 - z % 100) / 100; //Hunderter
+                    z = z + Math.PI;
+                    z *= z;
+                    z *= z;
+                    z *= z;
+                    z = z - (int) z;
+                    //result += z;
 
-                    if(d < c && b < c){
 
-                        z = (int) (z * Math.PI);
-                        z *= z;
-                        z *= z;
-                        z *= z;
-                        z = z - (int) z;
-                        result += z;
-                    }
-                checkedBlocks++;
-                }
-            return result;
+                return z;
     }
 }
 
